@@ -8,23 +8,23 @@ import MyPage from 'pages/MyPage';
 export const createRouter = () => {
   return createBrowserRouter([
     {
-      path: '/homepage',
+      path: '/home',
       element: <HomePage />,
     },
     {
-      path: '/mypage',
+      path: '/my',
       element: <MyPage />,
     },
     {
-      path: '/coursepage',
+      path: '/course',
       element: <CoursePage />,
     },
     {
-      path: '/explorepage',
+      path: '/explore',
       element: <ExplorePage />,
     },
     {
-      path: '/messagepage',
+      path: '/message',
       element: <MessagePage />,
     },
   ]);
