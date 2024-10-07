@@ -1,5 +1,5 @@
 import { RouterProvider } from 'react-router-dom';
-import { createRouter } from './routes';
+import { createRouter } from 'routes';
 
 const App = () => {
   const router = createRouter();

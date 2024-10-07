@@ -1,10 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
-
-import HomePage from '../pages/HomePage';
-import MyPage from '../pages/MyPage';
-import CoursePage from '../pages/CoursePage';
-import ExplorePage from '../pages/ExplorePage';
-import MessagePage from '../pages/MessagePage';
+import CoursePage from 'pages/CoursePage';
+import ExplorePage from 'pages/ExplorePage';
+import HomePage from 'pages/HomePage';
+import MessagePage from 'pages/MessagePage';
+import MyPage from 'pages/MyPage';
 
 export const createRouter = () => {
   return createBrowserRouter([
