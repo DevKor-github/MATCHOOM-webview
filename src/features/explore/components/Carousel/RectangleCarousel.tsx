@@ -1,12 +1,7 @@
-import { Card, CardType } from './Card';
+import { CarouselType } from '.';
+import { Card } from '../Card';
 
-interface Props {
-  title: string;
-  cards: CardType[];
-  // redirectUrl: string;
-}
-
-const RectangleCarousel = ({ title, cards }: Props) => {
+const RectangleCarousel = ({ title, cards }: CarouselType) => {
   return (
     <section className='flex flex-col gap-12 w-full'>
       <div className='text-16 font-700'>{title}</div>

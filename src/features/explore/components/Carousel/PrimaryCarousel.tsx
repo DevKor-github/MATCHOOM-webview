@@ -1,12 +1,7 @@
-import { Card, CardType } from './Card';
+import { CarouselType } from '.';
+import { Card } from '../Card';
 
-interface Props {
-  title: string;
-  cards: CardType[];
-  // redirectUrl: string;
-}
-
-const ListCarousel = ({ title, cards }: Props) => {
+const PrimaryCarousel = ({ title, cards }: CarouselType) => {
   const slicedCards = cards.slice(0, 3);
   return (
     <section className='flex flex-col gap-12 w-full'>
@@ -29,4 +24,4 @@ const ListCarousel = ({ title, cards }: Props) => {
   );
 };
 
-export default ListCarousel;
+export default PrimaryCarousel;
