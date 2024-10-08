@@ -2,7 +2,7 @@ import { CardType } from '.';
 
 const PrimaryCard = ({ title, description, guide, imageSrc }: CardType) => {
   return (
-    <button className='w-full h-84 flex gap-12'>
+    <button className='w-full h-84 flex gap-12 shrink-0'>
       <div className='w-84 h-84 shrink-0'>
         <img
           src={imageSrc}

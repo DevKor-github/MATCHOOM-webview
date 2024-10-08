@@ -4,7 +4,7 @@ type Props = Omit<CardType, 'guide'>;
 
 const RectangleCard = ({ title, description, imageSrc }: Props) => {
   return (
-    <button className='relative w-[28.2rem] h-140 overflow-hidden rounded-10'>
+    <button className='relative w-[28.2rem] h-140 overflow-hidden rounded-10 shrink-0'>
       <img
         src={imageSrc}
         alt='클래스 대표 사진'

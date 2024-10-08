@@ -1,5 +1,6 @@
 import RectangleCard from 'features/explore/components/Card/RectangleCard';
 import ListCarousel from 'features/explore/components/ListCarousel';
+import RectangleCarousel from 'features/explore/components/RectangleCarousel';
 import { MOCK_CARDS } from 'features/explore/mock/cards';
 
 const ExplorePage = () => {
@@ -11,6 +12,7 @@ const ExplorePage = () => {
         description={card.description}
         imageSrc={card.imageSrc}
       />
+      <RectangleCarousel title='오늘의 큐레이션' cards={MOCK_CARDS} />
       <ListCarousel title='HOT' cards={MOCK_CARDS} />
     </div>
   );
