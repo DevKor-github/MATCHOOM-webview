@@ -4,7 +4,11 @@ const PrimaryCard = ({ title, description, guide, imageSrc }: CardType) => {
   return (
     <button className='w-full h-84 flex gap-12'>
       <div className='w-84 h-84 shrink-0'>
-        <img src={imageSrc} className='w-full h-full rounded-10 object-cover' />
+        <img
+          src={imageSrc}
+          alt='클래스 대표 사진'
+          className='w-full h-full rounded-10 object-cover'
+        />
       </div>
       <div className='flex flex-col gap-4 w-full h-full text-left justify-between'>
         <span className='text-green text-12 font-600 h-[1.4rem]'>{guide}</span>

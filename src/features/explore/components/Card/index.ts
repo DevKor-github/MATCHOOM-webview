@@ -1,4 +1,5 @@
 import PrimaryCard from './PrimaryCard';
+import RectangleCard from './RectangleCard';
 
 export interface CardType {
   title: string;
@@ -7,4 +8,6 @@ export interface CardType {
   imageSrc: string;
 }
 
-export const Card = Object.assign(PrimaryCard, {});
+export const Card = Object.assign(PrimaryCard, {
+  Rectangle: RectangleCard,
+});
