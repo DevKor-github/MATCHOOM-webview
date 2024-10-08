@@ -1,16 +1,16 @@
 import { CarouselType } from '.';
 import { Card } from '../Card';
 
-const RectangleCarousel = ({ title, cards }: CarouselType) => {
+const SquareCarousel = ({ title, cards }: CarouselType) => {
   return (
     <section className='flex flex-col gap-12 w-full'>
       <div className='text-16 font-700 h-[2.2rem]'>{title}</div>
       <div className='flex gap-12 w-full overflow-x-auto'>
         {cards.map((card, index) => (
-          <Card.Rectangle
+          <Card.Square
             key={index} // TODO: id로 변경
             title={card.title}
-            description={card.description}
+            guide={card.guide}
             imageSrc={card.imageSrc}
           />
         ))}
@@ -19,4 +19,4 @@ const RectangleCarousel = ({ title, cards }: CarouselType) => {
   );
 };
 
-export default RectangleCarousel;
+export default SquareCarousel;
