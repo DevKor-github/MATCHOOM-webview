@@ -54,6 +54,7 @@ export default {
       floating: '1000',
     },
     colors: {
+      transparent: 'transparent',
       white: '#FFF',
       black: '#000',
       green: '#74EFC2',
