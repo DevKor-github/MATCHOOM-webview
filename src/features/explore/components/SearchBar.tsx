@@ -8,12 +8,12 @@ const SearchBar = () => {
   };
 
   return (
-    <div className='w-full h-44 relative'>
+    <div className='relative h-44 w-full'>
       <input
         value={value}
         onChange={handleChange}
         placeholder='맞춤 클래스를 찾아보세요!'
-        className='w-full h-full rounded-10 bg-grey-7 p-12 text-16 font-500 placeholder:text-grey-6 pl-40 outline-none'
+        className='h-full w-full rounded-10 bg-grey-7 p-12 pl-40 text-16 font-500 outline-none placeholder:text-grey-6'
       />
       <div className='absolute left-12 top-1/2 -translate-y-1/2'>
         <SearchIcon />
