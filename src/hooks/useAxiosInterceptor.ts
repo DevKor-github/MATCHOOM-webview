@@ -1,24 +1,16 @@
-import { AxiosError } from 'axios';
+import axios, { AxiosError } from 'axios';
 import { useAtom, useAtomValue } from 'jotai';
 import { useLayoutEffect } from 'react';
 import { accessTokenAtom, refreshTokenAtom } from 'store/tokenAtom';
 import { getNewAccessToken } from 'services/auth/api';
 import { authInstance } from 'services/config';
-import useWebViewListener from './useWebViewListener';
+import useWebViewListener, { postMessage } from './useWebViewListener';
 
 const useAxiosInterceptor = () => {
   useWebViewListener();
 
   const [accessToken, setAccessToken] = useAtom(accessTokenAtom);
   const refreshToken = useAtomValue(refreshTokenAtom);
-
-  const updateAccessToken = async () => {
-    const newAccessToken = await getNewAccessToken(refreshToken);
-    if (!newAccessToken) {
-      return;
-    }
-    setAccessToken(newAccessToken);
-  };
 
   useLayoutEffect(() => {
     if (!accessToken) {
@@ -34,12 +26,22 @@ const useAxiosInterceptor = () => {
 
     const responseInterceptor = authInstance.interceptors.response.use(
       (res) => res,
-      (error: AxiosError) => {
-        console.error(error);
+      async (error: AxiosError) => {
+        if (error.status !== 401) {
+          return Promise.reject(error);
+        }
 
-        if (error.status === 401) {
-          updateAccessToken();
-          console.error('토큰이 만료되었습니다.');
+        try {
+          const newAccessToken = await getNewAccessToken(refreshToken);
+          setAccessToken(newAccessToken);
+          const config = error.config;
+          const response = await axios({
+            ...config,
+            headers: { Authorization: `Bearer ${newAccessToken}` },
+          });
+          return await Promise.resolve(response);
+        } catch (e) {
+          postMessage({ type: 'LOGOUT' });
         }
       },
     );
