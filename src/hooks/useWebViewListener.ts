@@ -1,5 +1,6 @@
 import { useSetAtom } from 'jotai';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { accessTokenAtom, refreshTokenAtom } from 'store/tokenAtom';
 
 declare global {
@@ -14,6 +15,7 @@ interface MessageType {
 }
 
 const useWebViewListener = () => {
+  const navigate = useNavigate();
   const setRefreshToken = useSetAtom(refreshTokenAtom);
   const setAccessToken = useSetAtom(accessTokenAtom);
 
@@ -35,6 +37,9 @@ const useWebViewListener = () => {
     switch (type) {
       case 'INIT':
         handleInit(value);
+        break;
+      case 'REFRESH':
+        navigate(0);
         break;
       default:
         console.error(`Unknown Message from App: ${type}, ${value}`);
