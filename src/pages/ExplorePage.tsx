@@ -6,7 +6,7 @@ import { MOCK_CARDS } from 'features/explore/mock/cards';
 const ExplorePage = () => {
   return (
     <div className='p-20 pt-0'>
-      <div className='flex flex-col gap-16 pb-12 sticky top-0 bg-background z-nav mb-12'>
+      <div className='sticky top-0 z-nav mb-12 flex flex-col gap-16 bg-background pb-12 '>
         <SearchBar />
         <Tabs />
       </div>
