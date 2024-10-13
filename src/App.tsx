@@ -4,8 +4,8 @@ import useAxiosInterceptor from 'hooks/useAxiosInterceptor';
 import Provider from 'components/common/Provider';
 
 const App = () => {
-  const router = createRouter();
   useAxiosInterceptor();
+  const router = createRouter();
   return (
     <Provider>
       <RouterProvider router={router} />

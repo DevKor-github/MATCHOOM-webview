@@ -15,7 +15,7 @@ interface MessageType {
 }
 
 const useWebViewListener = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const setRefreshToken = useSetAtom(refreshTokenAtom);
   const setAccessToken = useSetAtom(accessTokenAtom);
 
@@ -39,7 +39,8 @@ const useWebViewListener = () => {
         handleInit(value);
         break;
       case 'REFRESH':
-        navigate(0);
+        // TODO: 현재 router context 내부에 있지 않아 동작하지 않음. 추후 해결해야함.
+        // navigate(0);
         break;
       default:
         console.error(`Unknown Message from App: ${type}, ${value}`);
