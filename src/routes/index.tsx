@@ -4,6 +4,7 @@ import ExplorePage from 'pages/ExplorePage';
 import HomePage from 'pages/HomePage';
 import MessagePage from 'pages/MessagePage';
 import MyPage from 'pages/MyPage';
+import CourseDetailPage from 'pages/CourseDetailPage';
 
 export const createRouter = () => {
   return createBrowserRouter([
@@ -26,6 +27,10 @@ export const createRouter = () => {
     {
       path: '/message',
       element: <MessagePage />,
+    },
+        {
+      path: '/coursedetail',
+      element: <CourseDetailPage />,
     },
   ]);
 };
