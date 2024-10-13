@@ -1,9 +1,13 @@
 import { AxiosError } from 'axios';
+import { useAtomValue } from 'jotai';
 import { useLayoutEffect } from 'react';
+import { accessTokenAtom } from 'store/tokenAtom';
 import { authInstance } from 'services/config';
+import useWebViewListener from './useWebViewListener';
 
 const useAxiosInterceptor = () => {
-  const accessToken = 'ACCESS_TOKEN';
+  useWebViewListener();
+  const accessToken = useAtomValue(accessTokenAtom);
 
   useLayoutEffect(() => {
     if (!accessToken) {
