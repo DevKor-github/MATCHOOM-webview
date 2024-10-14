@@ -7,4 +7,4 @@ export interface LectureOverviewType {
   curriculum: string;
 }
 
-export default LectureOverview;
+export { default } from './LectureOverview';

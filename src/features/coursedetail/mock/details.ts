@@ -18,7 +18,7 @@ export const MOCK_COURSES = {
 
 export const MOCK_INSTRUCTORS = {
   name: '허니제이',
-  profileimg: '/assets/icons/turtlebread.svg',
+  profileimg: 'assets/icons/turtlebread.svg',
   introduction:
     '안녕하세요 홀리뱅 크루의 리더 허니제이입니다. 정통 힙합 크루 홀리뱅의 힙합 코레오를 더 많은 분들과 함께하고 싶어서 이렇게 온라인 클래스를 준비하게 되었습니다! 크루원들마다의 코레오 스타일의 안무를 배워볼 수 있는 좋은 클래스가 될 것 같습니다.',
   experience: '2024 000 스튜디오 출강 중',

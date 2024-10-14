@@ -7,7 +7,7 @@ import { MOCK_INSTRUCTORS } from 'features/coursedetail/mock/details';
 
 const CourseDetailPage = () => {
   return (
-    <div className='flex-1 bg-background p-20 pt-0'>
+    <div className='mx-auto max-w-500 flex-1 bg-background p-20 pt-0'>
       <DetailMain {...MOCK_MAIN} />
       <LectureOverview {...MOCK_COURSES} />
       <InstructorOverview {...MOCK_INSTRUCTORS} />
