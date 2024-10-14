@@ -4,10 +4,10 @@ import { Card } from '../Card';
 const PrimaryCarousel = ({ title, cards }: CarouselType) => {
   const slicedCards = cards.slice(0, 3);
   return (
-    <section className='flex flex-col gap-12 w-full'>
-      <div className='flex justify-between items-center h-[2.2rem]'>
+    <section className='flex w-full flex-col gap-12'>
+      <div className='flex h-[2.2rem] items-center justify-between'>
         <span className='text-16 font-700'>{title}</span>
-        <button className='text-grey-6 text-14 font-500'>더보기</button>
+        <button className='text-14 font-500 text-grey-6'>더보기</button>
       </div>
       <div className='flex flex-col gap-12'>
         {slicedCards.map((card, index) => (

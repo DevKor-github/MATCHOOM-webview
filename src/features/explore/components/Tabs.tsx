@@ -6,7 +6,7 @@ type TabType = (typeof TABS)[number];
 const Tabs = () => {
   const [selectedTab, setSelectedTab] = useState<TabType>('전체보기');
   return (
-    <div className='w-full flex gap-[1rem] h-20'>
+    <div className='flex h-20 w-full gap-[1rem]'>
       {TABS.map((name) => (
         <Tab
           selected={selectedTab === name}
@@ -35,7 +35,7 @@ const Tab = ({ children, selected, handleClick }: TabProps) => {
     >
       {children}
       <div
-        className={`h-[1.5px] w-full bg-green rounded-full mt-[2px] ${selected ? 'bg-green' : 'bg-transparent'}`}
+        className={`mt-[2px] h-[1.5px] w-full rounded-full bg-green ${selected ? 'bg-green' : 'bg-transparent'}`}
       />
     </button>
   );
