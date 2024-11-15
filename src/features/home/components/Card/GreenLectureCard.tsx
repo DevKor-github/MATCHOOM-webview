@@ -6,10 +6,7 @@ import GreenCardImage from 'assets/images/card/green-card.svg';
 import FlipTimer from '../Timer/FlipTimer';
 
 const TEXT = {
-  role: {
-    student: 'Student',
-    creator: 'Creator',
-  },
+  role: 'Student',
 };
 
 const GreenLectureCard = ({
@@ -25,7 +22,7 @@ const GreenLectureCard = ({
       </div>
       <div className='absolute h-full w-full'>
         <div className='absolute flex w-full flex-row items-center justify-between p-20'>
-          <div className='text-14 font-500 text-green'>{TEXT.role.student}</div>
+          <div className='text-14 font-500 text-green'>{TEXT.role}</div>
           <div className='h-20 w-120'>
             <FlipTimer seconds={24 * 60 * 60} fontSize={14} dark={true} />
           </div>

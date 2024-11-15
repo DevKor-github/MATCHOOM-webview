@@ -7,5 +7,5 @@
   "compilerOptions": {
     "baseUrl": "./src"
   },
-  "include": ["custom.d.ts"]
+  "include": ["src/custom.d.ts"]
 }
