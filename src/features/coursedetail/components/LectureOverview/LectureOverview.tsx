@@ -7,8 +7,8 @@ const LectureOverview = ({
   curriculum,
 }: LectureOverviewType) => {
   return (
-    <section className='mb-12 text-18 font-700 text-green'>
-      클래스 소개
+    <section>
+      <p className='mb-12 text-18 font-700  text-green'>클래스 소개</p>
       <div>
         <p className='mb-12 mt-12 text-18 font-600 text-white'>강의 상세</p>
         <p className='text-16 font-700 text-white'>{title}</p>
@@ -16,8 +16,8 @@ const LectureOverview = ({
         {/* <video className='h-200 w-352 rounded-10' src={video} controls /> */}
         <div style={{ aspectRatio: '352 / 200' }}>
           <iframe
-            className='h-full w-full rounded-8'
-            src='https://www.youtube.com/embed/ZSgAdvigtJk?si=NseyOlnbQxq_iIdj'
+            className='mb-20 h-full w-full rounded-8'
+            src='https://www.youtube.com/embed/OdYNQZEsFN0?si=GNQQuKnF_ou7nsYv'
             title='YouTube video player'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             referrerPolicy='strict-origin-when-cross-origin'

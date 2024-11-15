@@ -1,8 +1,8 @@
 export const MOCK_MAIN = {
   // video: '',
-  title: 'STEP BY 1M',
+  title: '‘They Not Like Us’ Choreography',
   introduction: 'The First Steps of Dance: Easy Lessons for Beginners.',
-  genres: ['힙합', '코레오그래피'],
+  genres: ['힙합', '코레오그래피', '왁킹'],
   location: '1M STUDIO 1F',
   duration: '5:30 - 6:50 PM (KST)',
 };

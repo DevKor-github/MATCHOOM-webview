@@ -7,8 +7,8 @@ const InstructorOverview = ({
   experience,
 }: InstructorOverviewType) => {
   return (
-    <section className='mb-12 text-18 font-700 text-green'>
-      강사 소개
+    <section>
+      <p className='mb-12 text-18 font-700  text-green'>강사 소개</p>
       <div className='mb-24 mt-12 flex items-center space-x-16 text-white'>
         <img className='h-48 w-48 rounded-full' src={profileimg} />
         <div className='flex flex-col'>
