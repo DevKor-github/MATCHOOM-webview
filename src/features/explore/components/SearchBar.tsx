@@ -1,12 +1,12 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 import SearchIcon from 'assets/icons/search.svg';
 
-const SearchBar = () => {
-  const [value, setValue] = useState('');
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
+interface Props {
+  value: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}
 
+const SearchBar = ({ value, handleChange }: Props) => {
   return (
     <div className='relative h-44 w-full'>
       <input
