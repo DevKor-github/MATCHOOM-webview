@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ChangeEvent } from 'react';
+import useDebounce from 'hooks/useDebounce';
 import { useGetAllLectures } from 'services/search/api';
+import { GetAllLecturesResponse } from 'services/search/types';
 import { Card } from 'features/explore/components/Card';
 import { Carousel } from 'features/explore/components/Carousel';
 import SearchBar from 'features/explore/components/SearchBar';
@@ -14,9 +16,20 @@ const ExplorePage = () => {
   };
 
   const { data: lectures } = useGetAllLectures();
-  const filteredLectures = lectures?.filter((lecture) =>
-    lecture.name.includes(value),
-  );
+  const [filteredLectures, setFilteredLectures] =
+    useState<GetAllLecturesResponse>([]);
+
+  const filterLectures = useDebounce(() => {
+    const newFilteredLectures = lectures?.filter((lecture) =>
+      lecture.name.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredLectures(newFilteredLectures);
+  }, 300);
+
+  useEffect(() => {
+    setFilteredLectures([]);
+    filterLectures();
+  }, [value]);
 
   return (
     <div className='p-20 pt-0'>
